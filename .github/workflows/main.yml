@@ -16,26 +16,26 @@ jobs:
     runs-on: ubuntu-latest
    
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+     
       - uses: actions/checkout@v3
-      # Runs a single command using the runners shell
+     
       - name: Run a one-line script
         run:
          make build
       - name: Run a one-line script
         run:
          make push
-      # Runs a set of commands using the runners shell
+      
       - name: helm version
         run: helm version
-        # Runs a single command using the runners shell
+   
       - name: minikube start
         run: 
          minikube start
       - name: helm install
         run:
          helm install dockimage benchtask/ --values benchtask/values.yaml
-      # Runs a set of commands using the runners shell
+      
       
       - name: Sleep for 300 seconds
         uses: jakejarvis/wait-action@master
@@ -44,8 +44,22 @@ jobs:
          
       - name: get services
         run: kubectl get services
-            # Runs a set of commands using the runners shell
-                  # Runs a set of commands using the runners shell
+            
       - name: URL
         run:  curl $(minikube service dockimage --url)  
-            # Runs a set of commands using the runners shell
+           
+      - name: helm install bck end
+        run:
+         helm install dockimage benchtask/ --values benchtask/values.yaml
+      
+      - name: Sleep for 300 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+         time: 150s
+         
+      - name: get services
+        run: kubectl get services
+
+      - name: URL
+        run:  curl $(minikube service dockimage --url)  
+ 

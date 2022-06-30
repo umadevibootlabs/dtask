@@ -2,12 +2,6 @@
 name: CI
 
 on:
-
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
   workflow_dispatch:
 
 jobs:
@@ -18,23 +12,29 @@ jobs:
     steps:
      
       - uses: actions/checkout@v3
-     
-      - name: Run a one-line script
+      - name: start npm
+        run:
+         npm start
+      - name: test npm
+        run:
+         npm test
+      
+      - name: npm run build
+        run: npm run build
+      
+      - name: make build
         run:
          make build
-      - name: Run a one-line script
+      - name: make push
         run:
          make push
-      
-      - name: helm version
-        run: helm version
    
       - name: minikube start
         run: 
          minikube start
       - name: helm install
         run:
-         helm install dockimage benchtask/ --values benchtask/values.yaml
+         helm install app react/ --values react/values.yaml
       
       
       - name: Sleep for 300 seconds
@@ -43,23 +43,5 @@ jobs:
          time: 150s
          
       - name: get services
-        run: kubectl get services
-            
-      - name: URL
-        run:  curl $(minikube service dockimage --url)  
+        run: kubectl get services  
            
-      - name: helm install bck end
-        run:
-         helm install dockimage benchtask/ --values benchtask/values.yaml
-      
-      - name: Sleep for 300 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-         time: 150s
-         
-      - name: get services
-        run: kubectl get services
-
-      - name: URL
-        run:  curl $(minikube service dockimage --url)  
- 

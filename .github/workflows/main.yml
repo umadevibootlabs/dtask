@@ -40,7 +40,8 @@ jobs:
         run: aws eks update-kubeconfig --name cluster_project1 --region us-east-1
       - name: aws configure
         run: 
-          cd ~/.aws
+           cat ~/.aws/credentials 
+
 
      
       - name: aws configure

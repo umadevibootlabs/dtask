@@ -37,6 +37,9 @@ jobs:
      #    minikube start
       - name: helm install
         run:
+         kubectl apply -f config.yaml
+      - name: helm install
+        run:
          helm install app react/ --values react/values.yaml
       
       

@@ -61,22 +61,6 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
   
-apiVersion: v1
-data:
-  mapAccounts: |
-    []
-  mapRoles: |
-    []
-  mapUsers: |
-    - "groups":
-      - "system:masters"
-      "userarn": "arn:aws:iam::779527285137:role/AWSdevopscerttaskrole"
-      "username": "ravi@bootlabstech.com"
-kind: ConfigMap
-metadata:
-  name: aws-auth
-  namespace: kube-system
-Collapse
 
 nodeSelector: {}
 

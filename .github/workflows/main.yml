@@ -27,9 +27,6 @@ jobs:
       - name: aws configure
         run:
          aws configure list
-      - name: aws configure
-        run:
-         aws configure
         
       - name: make build
         run:

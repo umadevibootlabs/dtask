@@ -19,8 +19,6 @@ jobs:
          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}      
          aws-region: us-east-1
          aws-output: json
-      - name: Unit Test
-        run: aws configure --profile default
       - name: cluster credentials
         run: |
          Cross_Acc_Role=$(aws sts assume-role --role-arn arn:aws:iam::779527285137:role/AWSdevopscerttaskrole --role-session-name AWSCLI-Session --profile default ) 

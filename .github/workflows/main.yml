@@ -20,7 +20,7 @@ jobs:
          aws-region: us-east-1
          aws-output: json
       - name: cluster credentials
-        run: export AWS_PROFILE=admin
+         run export AWS_PROFILE=profile-default
       - name: cluster credentials
         run: |
          Cross_Acc_Role=$(aws sts assume-role --role-arn arn:aws:iam::779527285137:role/AWSdevopscerttaskrole --role-session-name AWSCLI-Session --profile default ) 

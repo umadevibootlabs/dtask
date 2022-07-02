@@ -30,7 +30,7 @@ jobs:
          
       - name: aws configure
         run: 
-          aws configure get varname default
+          aws list-all-profiles
 
 
       - name: cluster credentials

@@ -18,15 +18,10 @@ jobs:
          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}      
          aws-region: us-east-1
-        # role-to-assume: arn:aws:iam::779527285137:role/AWSdevopscerttaskrole
+        # role-to-assume: arn:aws:iam::779527285137:role/AWSdevopscerttaskrol
       - name: aws configure
         run: 
-          export AWS_DEFAULT_PROFILE= defaultaws configure get varname default
-
-      - name: aws configure
-        run: 
-         export AWS_PROFILE= default
-     
+          aws configure --profile default
 
       - name: cluster credentials
         run: |

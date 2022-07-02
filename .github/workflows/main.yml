@@ -26,13 +26,13 @@ jobs:
         run: aws eks update-kubeconfig --name cluster_project1 --region us-east-1
       - name: aws configure
         run:
-           export AWS_PROFILE= default
+         export AWS_PROFILE= default
       - name: aws configure
         run:
          aws configure list
       - name: aws configure
         run:
-           echo $AWS_PROFILE
+         echo $AWS_PROFILE
      
         
       - name: make build
@@ -42,9 +42,6 @@ jobs:
         run:
          make push
    
-   #   - name: minikube start
-    #    run: 
-     #    minikube start
       - name: helm install
         run:
          kubectl apply -f config.yaml

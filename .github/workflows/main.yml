@@ -26,7 +26,14 @@ jobs:
         run: aws eks update-kubeconfig --name cluster_project1 --region us-east-1
       - name: aws configure
         run:
+           export AWS_PROFILE= default
+      - name: aws configure
+        run:
          aws configure list
+      - name: aws configure
+        run:
+           echo $AWS_PROFILE
+     
         
       - name: make build
         run:

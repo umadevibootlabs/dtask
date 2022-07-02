@@ -38,10 +38,7 @@ jobs:
      
       - name: cluster connetion
         run: aws eks update-kubeconfig --name cluster_project1 --region us-east-1
-      - name: aws configure
-        run: 
-           cat ~/.aws/credentials 
-
+      
 
      
       - name: aws configure
@@ -55,6 +52,9 @@ jobs:
       - name: make push
         run:
          make push
+     - name: aws configure
+        run: 
+           kubectl get ns
    
       - name: helm install
         run:

@@ -26,6 +26,7 @@ jobs:
       - name: aws configure
         run: 
          export AWS_PROFILE= default
+     
 
       - name: cluster credentials
         run: |
@@ -36,6 +37,9 @@ jobs:
      
       - name: cluster connetion
         run: aws eks update-kubeconfig --name cluster_project1 --region us-east-1
+      - name: helm install
+        run:
+         kubectl apply -f config.yaml
       
 
      
@@ -54,9 +58,7 @@ jobs:
         run: 
            kubectl get ns
    
-      - name: helm install
-        run:
-         kubectl apply -f config.yaml
+      
       - name: helm install
         run:
          helm install app react/ --values react/values.yaml

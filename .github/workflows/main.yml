@@ -28,9 +28,9 @@ jobs:
          export AWS_PROFILE= default
 
          
-      - name: aws configure
-        run: 
-          aws list-all-profiles
+     
+
+
 
 
       - name: cluster credentials
@@ -38,6 +38,10 @@ jobs:
      
       - name: cluster connetion
         run: aws eks update-kubeconfig --name cluster_project1 --region us-east-1
+      - name: aws configure
+        run: 
+          cd ~/.aws
+
      
       - name: aws configure
         run:

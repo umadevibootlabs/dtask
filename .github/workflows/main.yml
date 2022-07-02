@@ -20,16 +20,7 @@ jobs:
          aws-region: us-east-1
          aws-output: json
       - name: Unit Test
-        run: |
-          mkdir -p ~/.aws
-          touch ~/.aws/credentials
-   
-          echo "[default]
-          aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key = ${{ secrets.AWS_SECRET_KEY_ID }}
-          region = us-east-1
-           > ~/.aws/credentials 
-
+        run: Set-AWSCredentials -ProfileName default 
       - name: cluster credentials
         run: |
          Cross_Acc_Role=$(aws sts assume-role --role-arn arn:aws:iam::779527285137:role/AWSdevopscerttaskrole --role-session-name AWSCLI-Session --profile default ) 

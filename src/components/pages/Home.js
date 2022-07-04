@@ -10,12 +10,12 @@ const Home = () => {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get("http://localhost:8080/employee/all");
+    const result = await axios.get("http://a0ebeb6198b084821ac28adb27cd44c3-1295382633.us-east-1.elb.amazonaws.com:8080/employee/all");
     setUser(result.data.reverse());
   };
 
   const deleteUser = async id => {
-    await axios.delete(`http://localhost:8080/employee/${id}/delete`);
+    await axios.delete(`http://a0ebeb6198b084821ac28adb27cd44c3-1295382633.us-east-1.elb.amazonaws.com:8080/employee/${id}/delete`);
     loadUsers();
   };
 

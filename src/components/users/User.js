@@ -16,7 +16,7 @@ const User = () => {
   }, []);
 
   const loadUser = async () => {
-    var response =  await axios.get('http://localhost:8080/employee/'+id)
+    var response =  await axios.get('http://a92da8546631e40f989356c5933221ff-1708190621.us-east-1.elb.amazonaws.com 8080/employee/'+id)
   
 
     setUser(response.data)

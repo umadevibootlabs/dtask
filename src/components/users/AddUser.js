@@ -18,7 +18,7 @@ const AddUser = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/employee/add", user)
+    await axios.post("http://a92da8546631e40f989356c5933221ff-1708190621.us-east-1.elb.amazonaws.com :8080/employee/add", user)
         .then(function (response) {
             console.log(response);
       })

@@ -24,12 +24,12 @@ const EditUser = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.put(`http://localhost:8080/employee/${id}/update`, user);
+    await axios.put(`http://a92da8546631e40f989356c5933221ff-1708190621.us-east-1.elb.amazonaws.com :8080/employee/${id}/update`, user);
     history.push("/");
   };
 
   const loadUser = async () => {
-    await axios.get(`http://localhost:8080/employee/`+ id)
+    await axios.get(`http://a92da8546631e40f989356c5933221ff-1708190621.us-east-1.elb.amazonaws.com :8080/employee/`+ id)
     .then(function (response){
         console.log(response.data)
         setUser(response.data)

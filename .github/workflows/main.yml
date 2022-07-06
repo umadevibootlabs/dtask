@@ -44,11 +44,4 @@ jobs:
           helm install app react/ --values react/values.yaml
       
       
-      - name: Sleep for 300 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-         time: 150s
-         
-      - name: get services
-        run: kubectl get services  
            

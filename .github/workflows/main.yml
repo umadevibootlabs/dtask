@@ -8,10 +8,6 @@ jobs:
  
   build:
     runs-on: self-hosted
-  sonarCheck:
-    #needs: [build]
-    name: sonarCheck
-    runs-on: dev
    
     steps:
      

@@ -16,10 +16,10 @@ jobs:
            npm start
            npm run build
            ls path
-      - name: build
-        with:
-          name: build-artifact
-          path: path
+#       - name: build
+#         with:
+#           name: build-artifact
+#           path: path
        
       - uses: actions/upload-artifact@master
         with:

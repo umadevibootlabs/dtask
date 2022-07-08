@@ -9,16 +9,22 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - run: mkdir -p path/to/artifact
       - uses: actions/checkout@v3
-        
+      - name: npm run
+        run: |
+           npm install --force
+           npm start
+           npm run build
+           ls path
+      - name: build
         with:
           name: build-artifact
-          path: path/to/artifact/
+          path: path
+       
       - uses: actions/upload-artifact@master
         with:
           name: build-artifact
-          path: path/to/artifact/
+          path: path
   Testing:
     needs: [build]
     runs-on: self-hosted
@@ -27,7 +33,7 @@ jobs:
          uses: actions/download-artifact@master
          with:
           name: build-artifact
-          path: home/ubuntu/actions-runner/_work/dtask/dtask
+          path: path
        - name: Install Dependencies
          run: npm ci
  

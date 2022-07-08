@@ -15,7 +15,7 @@ jobs:
            npm start
            npm run build
            ls path
-      - name: build
+      - uses: actions-artifact@master
         with:
           name: build-artifact
           path: path

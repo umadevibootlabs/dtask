@@ -13,14 +13,7 @@ jobs:
         with:
           name: build-artifact
           path: home/ubuntu/_work/dtask/dtask
-      - uses: actions/upload-artifact@master
-        with:
-          name: build-artifact- name: Install Dependencies
-        run: npm ci
- 
-      - name: Code Linting
-        run: npm run lint
-          path: home/ubuntu/_work/dtask/dtask
+    
   Testing:
     needs: [build]
     runs-on: self-hosted

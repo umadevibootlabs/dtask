@@ -13,7 +13,6 @@ jobs:
         run: |
            npm start
            npm run build
-           ls path
       - uses: actions/upload-artifact@master
         with:
           name: build-artifact

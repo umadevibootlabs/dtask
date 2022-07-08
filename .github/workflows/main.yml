@@ -9,15 +9,16 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
+      - run: mkdir -p path/to/artifact
       - uses: actions/checkout@v3
+        
         with:
           name: build-artifact
-          path: home/ubuntu/actions-runner/_work/dtask/dtask
+          path: path/to/artifact/
       - uses: actions/upload-artifact@master
         with:
           name: build-artifact
-          path: home/ubuntu/actions-runner/_work/dtask/dtask
-    
+          path: path/to/artifact/
   Testing:
     needs: [build]
     runs-on: self-hosted

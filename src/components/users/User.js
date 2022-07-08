@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
-// const User = () => {
+const User = () => {
 //   const [user, setUser] = useState({
 //     name: "",
 //     department: "",
@@ -29,13 +29,13 @@ import axios from "axios";
       <Link className="btn btn-primary" to="/">
         back to Home
       </Link>
-      <h1 className="display-4">User Id: {id}</h1>
+      <h1 className="display-4">User Id:</h1>
       <hr />
       <ul className="list-group w-50">
-        <li className="list-group-item">id: {id}</li>
-        <li className="list-group-item">name: {user.name}</li>
-        <li className="list-group-item">department: {user.department}</li>
-        <li className="list-group-item">salary: {user.salary}</li>
+        <li className="list-group-item">id:</li>
+        <li className="list-group-item">name: </li>
+        <li className="list-group-item">department:</li>
+        <li className="list-group-item">salary: </li>
       </ul>
     </div>
   );

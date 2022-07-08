@@ -25,10 +25,9 @@ jobs:
          export AWS_SECRET_ACCESS_KEY=$(echo $Cross_Acc_Role | jq -r .Credentials.SecretAccessKey)
          export AWS_SESSION_TOKEN=$(echo $Cross_Acc_Role | jq -r .Credentials.SessionToken)
   display:
+    needs: [build]
     runs-on: self-hosted
-   
     steps:
-      - uses: actions/checkout@v3
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:

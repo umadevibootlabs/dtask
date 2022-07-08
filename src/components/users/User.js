@@ -2,27 +2,27 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
-const User = () => {
-  const [user, setUser] = useState({
-    name: "",
-    department: "",
-    id: "",
-    salary: ""
-  });
+// const User = () => {
+//   const [user, setUser] = useState({
+//     name: "",
+//     department: "",
+//     id: "",
+//     salary: ""
+//   });
 
 
-  const loadUser = async () => {
-    var response =  await axios.get('http://a92da8546631e40f989356c5933221ff-1708190621.us-east-1.elb.amazonaws.com 8080/employee/'+id)
+//   const loadUser = async () => {
+//     var response =  await axios.get('http://a92da8546631e40f989356c5933221ff-1708190621.us-east-1.elb.amazonaws.com 8080/employee/'+id)
   
 
-    setUser(response.data)
+//     setUser(response.data)
 
-  };
+//   };
   
-  const { id } = useParams();
-  useEffect(() => {
-    loadUser();
-  });
+//   const { id } = useParams();
+//   useEffect(() => {
+//     loadUser();
+//   });
 
   return (
     <div className="container py-4">

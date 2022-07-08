@@ -12,11 +12,11 @@ jobs:
       - uses: actions/checkout@v3
         with:
           name: build-artifact
-          path: /home/runner/work/ dtask /dtask/build/libs
+          path: /home/dtask/dtask/build/libs
       - uses: actions/upload-artifact@master
         with:
           name: build-artifact
-          path: /home/runner/work/ dtask /dtask/build/libs
+          path: /home/dtask/dtask/build/libs
   Testing:
     needs: [build]
     runs-on: self-hosted

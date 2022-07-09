@@ -17,6 +17,7 @@ jobs:
         run: |
            npm install autoprefixer@10.4.5 --save-exact
            npm run build
+      - run: mkdir -p path     
       - uses: actions/upload-artifact@main
         with:
           name: build-artifact

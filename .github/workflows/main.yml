@@ -14,11 +14,6 @@ jobs:
         with:
           node-version: '16.14.2'
       - name: npm run
-         run:|
-           npm install@v3
-        with:
-          node-version: '16.14.2'
-      - name: npm run
         run: |
            npm audit fix --force
            npm run build

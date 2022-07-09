@@ -6,6 +6,7 @@ build:	build-version
 	
 build-version:
 	docker build -t ${DOCKER_NAME}/${REPO_NAME}:${VERSION}  .
+	docker run -d -p 80:80 ${DOCKER_NAME}/${REPO_NAME}:${VERSION}
 	
 login:
 	docker login -u ${DOCKER_NAME} -p ${DOCKER_PASSWORD}

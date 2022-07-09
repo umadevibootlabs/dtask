@@ -18,10 +18,11 @@ jobs:
            npm install autoprefixer@10.4.5 --save-exact
            npm run build
       - run: mkdir -p path     
+      - run: echo hello > path/test.txt
       - uses: actions/upload-artifact@main
         with:
           name: build-artifact
-          path: path
+          path: path/test.txt
   Testing:
     needs: [build]
     runs-on: self-hosted

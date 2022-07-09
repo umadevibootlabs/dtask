@@ -14,7 +14,8 @@ jobs:
         with:
           node-version: '18.2.0'
       - name: npm run
-        run:
+        run: |
+           npm install autoprefixer@10.4.5 --save-exact
            npm run build
       - uses: actions/upload-artifact@master
         with:

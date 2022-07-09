@@ -23,18 +23,18 @@ jobs:
         with:
           name: build-artifact
           path: path/test.txt
-  lint:
-    name: Lint
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.2.0'
-      - run: |
-           npm install autoprefixer@10.4.5 --save-exact
-           npm run lint        
+#   lint:
+#     name: Lint
+#     runs-on: self-hosted
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Use Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '18.2.0'
+#       - run: |
+#            npm install autoprefixer@10.4.5 --save-exact
+#            npm run lint        
   Testing:
     needs: [build]
     runs-on: self-hosted
@@ -44,8 +44,8 @@ jobs:
          with:
           name: build-artifact
  
-       - name: Code Linting
-         run: npm run lint
+#        - name: Code Linting
+#          run: npm run lint
   Image:
     needs: [Testing]
     runs-on: self-hosted

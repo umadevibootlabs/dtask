@@ -23,6 +23,14 @@ jobs:
         with:
           name: build-artifact
           path: path/test.txt
+  lint:
+    name: Lint
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+           npm install autoprefixer@10.4.5 --save-exact
+           npm run lint        
   Testing:
     needs: [build]
     runs-on: self-hosted

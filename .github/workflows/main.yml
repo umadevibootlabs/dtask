@@ -17,7 +17,7 @@ jobs:
         run: |
            npm install autoprefixer@10.4.5 --save-exact
            npm run build
-      - uses: actions/upload-artifact@main
+      - uses: actions/upload-artifact@v3
         with:
           name: build-artifact
           path: path
@@ -26,7 +26,7 @@ jobs:
     runs-on: self-hosted
     steps:
        - name: build-artifact
-         uses: actions/download-artifact@main
+         uses: actions/download-artifact@v3
          with:
           name: build-artifact
  
